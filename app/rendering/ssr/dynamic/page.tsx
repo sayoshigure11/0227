@@ -6,7 +6,8 @@ type Users = {
 }
 
 async function RenderingDynamicPage() {
-    const getData = await fetch("http://localhost:3000/api/rendering")
+    // const getData = await fetch("http://localhost:3000/api/rendering")
+    const getData = await fetch(`${process.env.BASE_URL}/api/rendering`)
     const getData2: Users = await getData.json()
     const prismaData = getData2.dataList
 
