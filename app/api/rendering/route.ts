@@ -7,13 +7,15 @@
 // }
 
 
-import { Redis } from '@upstash/redis'
+
+// import { Redis } from '@upstash/redis'
+import { redis } from "@/app/rendering/components/redis";
 import { NextResponse } from "next/server";
 
-export const redis = new Redis({
-  url: process.env.UPSTASH_REDIS_REST_URL,
-  token: process.env.UPSTASH_REDIS_REST_TOKEN,
-})
+// export const redis = new Redis({
+//   url: process.env.UPSTASH_REDIS_REST_URL,
+//   token: process.env.UPSTASH_REDIS_REST_TOKEN,
+// })
 
 export async function GET() {
     const users = await redis.get('datalist');
