@@ -1,6 +1,7 @@
 "use server"
 
-import { redis } from "./api/rendering/route";
+import { redis } from "./rendering/components/redis"
+
 
 export async function myAction(formData: FormData) {
     const id = formData.get("id") as string

@@ -18,6 +18,11 @@ import { NextResponse } from "next/server";
 // })
 
 export async function GET() {
+  // const redis = new Redis({
+  //   url: process.env.UPSTASH_REDIS_REST_URL,
+  //   token: process.env.UPSTASH_REDIS_REST_TOKEN,
+  // })
+
     const users = await redis.get('datalist');
     return NextResponse.json({dataList: users, status: 200})
 }
